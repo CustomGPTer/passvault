@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PassVault: a free, offline password manager for Android</title>
+<meta name="description" content="PassVault is a free password manager for Android that keeps passwords, recovery codes, notes, cards and Wi-Fi keys in one encrypted vault on your phone. No account, no adverts and no internet permission.">
+<meta name="author" content="Jonathan Jackson">
+<link rel="canonical" href="https://customgpter.github.io/passvault/">
+<meta name="theme-color" content="#f3f7f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PassVault">
+<meta property="og:title" content="PassVault: a free, offline password manager for Android">
+<meta property="og:description" content="PassVault is a free password manager for Android that keeps passwords, recovery codes, notes, cards and Wi-Fi keys in one encrypted vault on your phone. No account, no adverts and no internet permission.">
+<meta property="og:url" content="https://customgpter.github.io/passvault/">
+<meta property="og:image" content="https://customgpter.github.io/passvault/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PassVault&#x27;s vault screen: nine protected items, Quick add, search and the item list">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/site.css?v=1">
+<link rel="stylesheet" href="./assets/house.css?v=1">
+<link rel="stylesheet" href="./assets/apps-list.css?v=1">
+<script src="./assets/apps-list.js?v=1" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PassVault","url":"https://customgpter.github.io/passvault/","description":"PassVault is a free password manager for Android that keeps passwords, recovery codes, notes, cards and Wi-Fi keys in one encrypted vault on your phone. No account, no adverts and no internet permission.","applicationCategory":"SecurityApplication","operatingSystem":"Android 11 or later","softwareVersion":"1.0.2","downloadUrl":"https://github.com/CustomGPTer/passvault/releases/latest/download/PassVault.apk","releaseNotes":"https://customgpter.github.io/passvault/releases.html","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"inLanguage":"en-GB","image":"https://customgpter.github.io/passvault/assets/og.png","featureList":["Six kinds of item","Favourites, folders and tags","Recovery codes done properly","History and trash","Strong password generator","Memorable passphrases","Vault health","Android autofill","Offline authenticator","Clipboard that clears itself","Master password with Argon2id","Fingerprint or face"],"author":{"@type":"Person","name":"Jonathan Jackson"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is PassVault really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no paid version, no subscription, no trial and no adverts, and nothing in the app is locked."}},{"@type":"Question","name":"Is it on Google Play?","acceptedAnswer":{"@type":"Answer","text":"No. PassVault is a personal project and is downloaded from this site as an Android app file. It needs Android 11 or later."}},{"@type":"Question","name":"Does it need the internet?","acceptedAnswer":{"@type":"Answer","text":"No. The app does not ask Android for internet access at all, so it cannot go online. The website, newer-version and More apps links in Settings open in your own browser."}},{"@type":"Question","name":"What if I forget my master password?","acceptedAnswer":{"@type":"Answer","text":"Nobody can reset it, because it never leaves your phone. That is why PassVault asks you to make a recovery key when you set up the vault: write it down and keep it away from the phone. With it you can open the vault and choose a new password."}},{"@type":"Question","name":"Can I use it on two phones?","acceptedAnswer":{"@type":"Answer","text":"There is no syncing, because nothing goes online. Move the vault to a new phone with an encrypted backup, or keep a backup on each."}},{"@type":"Question","name":"How do I move my passwords in?","acceptedAnswer":{"@type":"Answer","text":"Export a CSV file from Chrome, Google Password Manager, Firefox, Bitwarden or KeePass, then choose Backup, restore and import, Import passwords from CSV. Delete the CSV afterwards: it is readable by anyone."}},{"@type":"Question","name":"Will autofill work in my browser?","acceptedAnswer":{"@type":"Answer","text":"Autofill works in Chrome, Samsung Internet, Firefox, Edge, Brave and DuckDuckGo when the site gives Android its web address, and in apps you link to a login. Some forms don't work with Android autofill; copy and paste always does."}},{"@type":"Question","name":"How do I update it?","acceptedAnswer":{"@type":"Answer","text":"Download the new file from this site and install it over the old one. Never uninstall first: uninstalling deletes the vault. Export a backup before updating, to be safe."}},{"@type":"Question","name":"Has it been security audited?","acceptedAnswer":{"@type":"Answer","text":"Not by an independent firm. It uses standard, well-tested building blocks (AES-256-GCM, Argon2id, Android Keystore) and is checked by over 1,200 automated tests, but no app can protect secrets on a phone that has been compromised."}},{"@type":"Question","name":"Who made it?","acceptedAnswer":{"@type":"Answer","text":"PassVault is made by Jonathan Jackson, an independent developer in the United Kingdom. It is not connected with Bitwarden, 1Password, Google or any other company."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<div class="wrap">
+<a class="brand" href="./" aria-label="PassVault home"><svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#0B1220"/><path fill="#122539" d="M28,21L80,21Q87,21 87,28L87,80Q87,87 80,87L28,87Q21,87 21,80L21,28Q21,21 28,21"/><path fill="none" stroke="#54E3C0" stroke-width="4" stroke-linejoin="round" d="M54,32L73,39L73,54Q73,70 54,78Q35,70 35,54L35,39Z"/><path fill="#54E3C0" d="M54,44A7,7 0,1 0,54 58A7,7 0,1 0,54 44M51,56L57,56L58,65L50,65Z"/></svg><span>PassVault</span></a>
+<nav aria-label="Main"><ul><li><a href="./#features">Features</a></li><li><a href="./compare.html">Compare</a></li><li><a href="./releases.html">Releases</a></li><li><a class="more-apps" href="./more-apps.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>More apps</a></li></ul></nav>
+<a class="button small" href="https://github.com/CustomGPTer/passvault/releases/latest/download/PassVault.apk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>
+</header>
+<main id="main">
+<div class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<h1>Your passwords. Your phone. Nobody else&#x27;s.</h1>
+<p class="lede">PassVault keeps every password, recovery code, private note, card and Wi-Fi key in one vault, locked with modern encryption and kept only on your phone.</p><p class="lede">It is free, with no adverts, no account and nothing to unlock. The app has no permission to go online, so your vault can't be uploaded, synced or leaked from a server.</p>
+
+<p class="get" id="download"><a class="button" href="https://github.com/CustomGPTer/passvault/releases/latest/download/PassVault.apk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a><a class="aside" href="#install">How to install</a></p>
+<ul class="pills"><li>Version 1.0.2</li><li>Android 11 or later</li><li>554 KB</li></ul>
+<p class="facts">Free, with nothing to unlock. No adverts, no account with the developer, no tracking. <a href="compare.html">Compare</a> or read the <a href="releases.html">release notes</a>.</p>
+<p class="facts">Chrome may say the file might be harmful. It shows this for app files that do not come from Google Play. Choose Download anyway.</p>
+</div>
+<div class="hero-phone"><div class="phone"><img src="./assets/screens/vault.png" alt="Your vault: everything protected, searchable and sorted into logins, codes, notes, cards and Wi-Fi." width="393" height="852" fetchpriority="high"></div></div>
+</div>
+</div>
+
+<section class="promises" aria-label="In short">
+<div class="wrap"><ul><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No internet</b><span>The app has no permission to go online.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No account</b><span>Nothing to sign up for, nothing to sign in to.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>Encrypted</b><span>AES-256 with an Argon2id master password.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No adverts</b><span>None in the app and none on this site.</span></span></li></ul></div>
+</section>
+
+<section id="screens" aria-labelledby="screens-h">
+<div class="wrap">
+<h2 id="screens-h">A look inside</h2>
+<p class="intro">These are the real screens, drawn from the app&#x27;s own code with made-up entries. Swipe or scroll sideways to see them all.</p>
+<div class="gallery" tabindex="0" role="region" aria-label="Screens from PassVault"><figure class="shot"><div class="phone"><img src="./assets/screens/vault.png" alt="Your vault: everything protected, searchable and sorted into logins, codes, notes, cards and Wi-Fi." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Your vault: everything protected, searchable and sorted into logins, codes, notes, cards and Wi-Fi.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/login.png" alt="A login: copy the username or password, or reveal it for 15 seconds." width="393" height="852" loading="eager" decoding="async"></div><figcaption>A login: copy the username or password, or reveal it for 15 seconds.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/codes.png" alt="Recovery codes, each revealed and copied on its own and marked used when you use it." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Recovery codes, each revealed and copied on its own and marked used when you use it.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/authenticator.png" alt="The optional offline authenticator makes two-step codes on the phone." width="393" height="852" loading="eager" decoding="async"></div><figcaption>The optional offline authenticator makes two-step codes on the phone.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/quick-add.png" alt="Quick add, with a strong password a tap away and extra fields when you need them." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Quick add, with a strong password a tap away and extra fields when you need them.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/generator.png" alt="Make passwords or memorable passphrases, entirely offline." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Make passwords or memorable passphrases, entirely offline.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/backup.png" alt="Encrypted backups you keep, checked byte for byte after saving." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Encrypted backups you keep, checked byte for byte after saving.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/settings.png" alt="Lock timing, biometrics, clipboard clearing, screenshots and more, all yours to set." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Lock timing, biometrics, clipboard clearing, screenshots and more, all yours to set.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/light.png" alt="Midnight, Light or pure-black themes, in lists or cards." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Midnight, Light or pure-black themes, in lists or cards.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/welcome.png" alt="Set one master password. There is no online reset, so nobody else can reset it either." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Set one master password. There is no online reset, so nobody else can reset it either.</figcaption></figure></div>
+</div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<div class="wrap">
+<h2 id="how-h">How it works</h2>
+<p class="intro">One master password opens the vault. Nothing ever leaves your phone unless you export it.</p>
+<ol class="steps"><li><h3>Create your vault</h3><p>Choose a master passphrase of at least 14 characters, and make a recovery key to keep somewhere safe, away from the phone.</p></li><li><h3>Fill it up</h3><p>Add logins, recovery codes, notes, cards, Wi-Fi and licence keys, or import a CSV from Chrome, Firefox, Bitwarden or KeePass.</p></li><li><h3>Use it anywhere</h3><p>Unlock with your password or fingerprint, then copy, or let Android's autofill put the login straight into apps and websites.</p></li></ol>
+</div>
+</section>
+
+<section id="features" aria-labelledby="features-h">
+<div class="wrap">
+<h2 id="features-h">Everything is in, and all of it is free</h2>
+<p class="intro">Nothing below is held back for a paid tier, because there is no paid tier.</p>
+<div class="groups"><div class="group"><h3>Your vault</h3><dl><div><dt>Six kinds of item</dt><dd>Logins, recovery codes, secure notes, payment cards, Wi-Fi networks and software licences, each with the fields it needs.</dd></div><div><dt>Favourites, folders and tags</dt><dd>Star what you use most, file items in folders, tag them, and search names, usernames, folders and tags.</dd></div><div><dt>Recovery codes done properly</dt><dd>Each code is revealed and copied on its own, and marked used when you use it, so you always know how many are left.</dd></div><div><dt>History and trash</dt><dd>Previous passwords are kept, encrypted, and deleted items wait in the trash for the time you choose.</dd></div></dl></div><div class="group"><h3>Passwords</h3><dl><div><dt>Strong password generator</dt><dd>Up to 128 characters, with the character groups you choose and ambiguous characters left out unless you want them.</dd></div><div><dt>Memorable passphrases</dt><dd>Four to ten random words from the EFF's 7,776-word list, picked with the phone's secure random generator.</dd></div><div><dt>Vault health</dt><dd>Finds weak, reused, incomplete and year-old logins, all checked on the phone.</dd></div></dl></div><div class="group"><h3>Signing in</h3><dl><div><dt>Android autofill</dt><dd>Fills logins in apps and supported browsers after you unlock and choose the login. Websites must match exactly, and apps are pinned to their signing identity.</dd></div><div><dt>Offline authenticator</dt><dd>Optional two-step codes from a secret or a QR code picture, made on the phone with no camera permission.</dd></div><div><dt>Clipboard that clears itself</dt><dd>Copied secrets are marked sensitive and cleared after 15, 30 or 60 seconds, where Android allows.</dd></div></dl></div><div class="group"><h3>Locking</h3><dl><div><dt>Master password with Argon2id</dt><dd>Your password is stretched with Argon2id using 64 MB of memory, so guessing it from a stolen file is slow and costly.</dd></div><div><dt>Fingerprint or face</dt><dd>Unlock with your phone's strong biometrics, with the key held by Android's secure hardware.</dd></div><div><dt>Locks itself</dt><dd>When the screen goes off, and after you leave the app for the time you choose. Screenshots and the recent-apps preview are blocked by default.</dd></div></dl></div><div class="group"><h3>Backups and moving phones</h3><dl><div><dt>Encrypted backups</dt><dd>Export the whole vault as one encrypted file, saved where you choose and read back to check every byte.</dd></div><div><dt>Restore anywhere</dt><dd>Restore on a new phone with the backup's password or its recovery key, after a preview of what it holds.</dd></div><div><dt>Bring your passwords in</dt><dd>Import CSV exports from Chrome, Google Password Manager, Firefox, Bitwarden, KeePass and others.</dd></div></dl></div><div class="group"><h3>Make it yours</h3><dl><div><dt>Three themes</dt><dd>Midnight, Light and AMOLED black.</dd></div><div><dt>Three layouts</dt><dd>Comfortable list, compact list or two-column cards.</dd></div><div><dt>Easy to read</dt><dd>Follows your phone's font size, with larger text, reduced motion and haptics switches of its own.</dd></div></dl></div></div>
+</div>
+</section>
+
+<section id="privacy" aria-labelledby="privacy-h">
+<div class="wrap">
+<h2 id="privacy-h">A vault that can&#x27;t leak from a server</h2>
+<ul class="plain"><li><h3>No internet at all</h3><p>PassVault does not have Android's internet permission. It cannot upload your vault, sync it or be reached from outside.</p></li><li><h3>Encrypted on the phone</h3><p>The whole vault is encrypted with AES-256-GCM under a random key, which only your master password, your recovery key or your phone's secure hardware can open.</p></li><li><h3>No account, no tracking</h3><p>There is nothing to sign up for. No analytics, no crash reports, no adverts and no remote logging.</p></li></ul>
+</div>
+</section>
+
+<section id="install" aria-labelledby="install-h">
+<div class="wrap">
+<h2 id="install-h">Installing and updating</h2>
+<p class="intro">PassVault is not on Google Play, so your phone asks a couple of extra questions the first time.</p>
+<ol class="steps"><li><h3>Download the app file</h3><p>Tap Download on your phone. The file is called PassVault.apk and is about 554 KB. If Chrome says the file might be harmful, choose Download anyway.</p></li><li><h3>Allow the install</h3><p>Open the file. The first time, Android asks you to allow your browser to install apps. Allow it, go back and tap Install. If Google Play Protect steps in, choose More details, then Install anyway.</p></li><li><h3>Updating later</h3><p>PassVault never goes online, so it cannot check for updates itself. Settings, Check for a newer version opens the release page in your browser: install the new file over the old one and your vault is kept. Never uninstall first, because uninstalling deletes the vault.</p></li></ol>
+<p class="after-table">Version 1.0.2, released 26 November 2026. See the <a href="releases.html">release notes</a>, or <a href="releases.html#checking">check your download</a>.</p>
+</div>
+</section>
+
+<section id="questions" aria-labelledby="questions-h">
+<div class="wrap">
+<h2 id="questions-h">Questions</h2>
+<div class="faq"><details><summary>Is PassVault really free?</summary><p>Yes. There is no paid version, no subscription, no trial and no adverts, and nothing in the app is locked.</p></details><details><summary>Is it on Google Play?</summary><p>No. PassVault is a personal project and is downloaded from this site as an Android app file. It needs Android 11 or later.</p></details><details><summary>Does it need the internet?</summary><p>No. The app does not ask Android for internet access at all, so it cannot go online. The website, newer-version and More apps links in Settings open in your own browser.</p></details><details><summary>What if I forget my master password?</summary><p>Nobody can reset it, because it never leaves your phone. That is why PassVault asks you to make a recovery key when you set up the vault: write it down and keep it away from the phone. With it you can open the vault and choose a new password.</p></details><details><summary>Can I use it on two phones?</summary><p>There is no syncing, because nothing goes online. Move the vault to a new phone with an encrypted backup, or keep a backup on each.</p></details><details><summary>How do I move my passwords in?</summary><p>Export a CSV file from Chrome, Google Password Manager, Firefox, Bitwarden or KeePass, then choose Backup, restore and import, Import passwords from CSV. Delete the CSV afterwards: it is readable by anyone.</p></details><details><summary>Will autofill work in my browser?</summary><p>Autofill works in Chrome, Samsung Internet, Firefox, Edge, Brave and DuckDuckGo when the site gives Android its web address, and in apps you link to a login. Some forms don't work with Android autofill; copy and paste always does.</p></details><details><summary>How do I update it?</summary><p>Download the new file from this site and install it over the old one. Never uninstall first: uninstalling deletes the vault. Export a backup before updating, to be safe.</p></details><details><summary>Has it been security audited?</summary><p>Not by an independent firm. It uses standard, well-tested building blocks (AES-256-GCM, Argon2id, Android Keystore) and is checked by over 1,200 automated tests, but no app can protect secrets on a phone that has been compromised.</p></details><details><summary>Who made it?</summary><p>PassVault is made by Jonathan Jackson, an independent developer in the United Kingdom. It is not connected with Bitwarden, 1Password, Google or any other company.</p></details></div>
+</div>
+</section>
+
+<section class="closing" aria-labelledby="closing-h">
+<div class="wrap">
+<div><h2 id="closing-h">Your passwords. Your phone. Nobody else&#x27;s.</h2><p>Free, with no adverts and nothing to unlock. Made by the developer of several other free Android apps: <a href="more-apps.html">see them all</a>.</p></div>
+<a class="button" href="https://github.com/CustomGPTer/passvault/releases/latest/download/PassVault.apk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a>
+</div>
+</section>
+</main>
+<footer class="colophon">
+<div class="wrap">
+<div>
+<a class="brand" href="./" aria-label="PassVault home"><svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#0B1220"/><path fill="#122539" d="M28,21L80,21Q87,21 87,28L87,80Q87,87 80,87L28,87Q21,87 21,80L21,28Q21,21 28,21"/><path fill="none" stroke="#54E3C0" stroke-width="4" stroke-linejoin="round" d="M54,32L73,39L73,54Q73,70 54,78Q35,70 35,54L35,39Z"/><path fill="#54E3C0" d="M54,44A7,7 0,1 0,54 58A7,7 0,1 0,54 44M51,56L57,56L58,65L50,65Z"/></svg><span>PassVault</span></a>
+<p>&copy; 2026 Jonathan Jackson. PassVault is an independent app.</p>
+<p>This site uses no cookies and no tracking.</p>
+<p>Set in Bricolage Grotesque and Atkinson Hyperlegible.</p>
+</div>
+<nav aria-label="The app"><h2>The app</h2><ul>
+<li><a href="./">Home</a></li>
+<li><a href="./compare.html">Compare</a></li>
+<li><a href="./releases.html">Release notes</a></li>
+
+</ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul>
+<li><a href="./privacy.html">Privacy policy</a></li>
+<li><a href="./terms.html">Terms of use</a></li>
+<li><a href="./licences.html">Licences</a></li>
+</ul></nav>
+<nav aria-label="More"><h2>More</h2><ul>
+<li><a href="./more-apps.html">More apps</a></li>
+<li><a href="https://customgpter.github.io/">All apps</a></li>
+<li><a href="https://github.com/CustomGPTer/passvault/issues">Contact</a></li>
+</ul></nav>
+</div>
+</footer>
+</body>
+</html>
