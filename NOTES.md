@@ -1,13 +1,6 @@
-PassVault 1.0.2
+PassVault 1.0.3 ties the app into TorusApps.com.
 
-- File picks no longer lock the vault: with Lock after leaving set to Immediately, opening the file picker locked the vault, so CSV and QR imports always failed and a backup's date wasn't saved. A pick or settings visit started from PassVault now has up to 3 minutes. Turning the screen off still locks at once.
-- The Back button now goes back to the item from Password history and from editing, and to the unlock screen from Recover your vault.
-- Changing the type in Quick add keeps the Quick add title.
-- New in Settings: More apps, Check for a newer version, the website, and the open-source licences in full.
-- A new bottom bar, docked flat to the bottom edge, with a pill behind the selected icon.
+- Settings: Check for a newer version and the website open the PassVault page on torusapps.com, More apps opens torusapps.com, and there are new Privacy policy and Email rows. PassVault still has no internet permission.
+- The in-app list of other apps and its 71 icons are gone, so the app is smaller.
 
-Installs over 1.0.1 and 1.0.0 and keeps your vault. Export a backup first, and never uninstall before updating: uninstalling deletes the vault.
-
-PassVault.apk is 554 KB (567,333 bytes). Android 11 or later.
-
-Website: https://customgpter.github.io/passvault/
+Installs over the earlier version and keeps everything.
